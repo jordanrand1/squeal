@@ -1,0 +1,17 @@
+// Place all the styles related to the restaurants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'materialize.min.css';
+
+.restaurant{
+  height: 500px;
+  background-color: rgb(250, 240, 227);
+  border: 2px solid rgb(192, 177, 158);
+  box-shadow: 0px 0px 15px black;
+  text-align: center
+}
+
+.rest-img{
+  object-fit: contain;
+}
