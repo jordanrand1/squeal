@@ -5,17 +5,21 @@ class RestaurantsController < ApplicationController
 
   def show
     @restaurant = Restaurant.find(params[:id])
-    render :show
   end
 
   def new
     @restaurant = Restaurant.new
-    render :new
+    redirect_to new_restaurant_path
   end
 
   def create
     @restaurant = Restaurant.create(user_params)
-    render :index
+    redirect_to restaurants_path
+  end
+
+  def destroy
+    Restaurant.find(params[:id]).destroy
+    redirect_to restaurants_path
   end
 
   private
