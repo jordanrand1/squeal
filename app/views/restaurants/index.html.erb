@@ -1,15 +1,21 @@
-<h1>Squeal</h1>
-<%= link_to 'New Restaurant', new_restaurant_path, {class: 'btn'} %>
-<div class="row">
+<%= render 'navbar'%>
+
+<div class="container">
+
   <% @restaurants.each do |restaurant| %>
-    <div class="col s4">
+    <div class="row">
       <div class="restaurant">
-        <%= image_tag restaurant.image.url(:thumb), {class: 'rest-img'} %>
-        <h3><%= restaurant.name %></h3>
-        <p><%= restaurant.rating %></p>
-        <p><%= restaurant.description %><p>
+        <%= image_tag restaurant.image.url(:thumb), {class: 'rest-img col s3'} %>
+
+        <div class="col s9">
+          <h3><%= restaurant.name %></h3>
+          <p><%= restaurant.rating %></p>
+          <p><%= restaurant.description %><p>
+        </div>
+
         <%= link_to 'Read More', restaurant_path(restaurant.id), {class: 'btn'} %>
       </div>
     </div>
   <% end %>
+
 </div>

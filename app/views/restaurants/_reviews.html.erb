@@ -1,0 +1,8 @@
+<% @restaurant.reviews.each do |review| %>
+  <div class="row">
+    <%= review.author %>
+    <%= review.rating %>
+    <%= review.body %>
+  </div>
+
+<% end %>

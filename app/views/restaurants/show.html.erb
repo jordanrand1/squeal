@@ -1,9 +1,28 @@
+<%= render 'navbar'%>
+
 <div class="container">
-  <%= image_tag @restaurant.image.url (:medium) %>
-  <h1><%= @restaurant.name %></h1>
-  <h4><%= @restaurant.rating %></h4>
-  <%= @restaurant.description %>
-  <%= link_to 'Back', restaurants_path, {class: 'btn'}%>
-  <%= link_to 'Delete', restaurant_path(@restaurant.id), {method: :delete, class: 'btn'}%>
+
+  <div class="row" style="padding: 20px 0px;">
+
+    <div class="col s6">
+      <%= image_tag @restaurant.image.url (:medium) %>
+    </div>
+
+    <div class="col s6"><%= @restaurant.name %>
+      <h4><%= @restaurant.rating %></h4>
+      <%= @restaurant.description %>
+      <br>
+      <br>
+      <%= link_to 'Back', restaurants_path, {class: 'btn blue'}%>
+      <%= link_to 'Edit', edit_restaurant_path(@restaurant), {class: 'btn'} %>
+      <%= link_to 'Delete', restaurant_path(@restaurant.id), {method: :delete, class: 'btn red'}%>
+    </div>
+
+  </div>
+
+  <%= link_to 'New Review', new_review_path(id: @restaurant.id) %>
+
+  <%= render 'reviews'%>
+  
 </div>
 
